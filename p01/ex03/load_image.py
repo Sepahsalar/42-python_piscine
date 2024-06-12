@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 
-def ft_load(path: str) -> np.ndarray:
+def ft_load(path: str):
     """
     Load an image from the specified path, print its format,
     shape, and pixel content in RGB format.
@@ -19,11 +19,11 @@ def ft_load(path: str) -> np.ndarray:
     """
     try:
         img = Image.open(path)
-        print("Image format:", img.format)
         img = img.convert("RGB")
         img_array = np.array(img)
         print("The shape of image is:", img_array.shape)
         print(img_array)
+        img = img.convert("L")
     except FileNotFoundError:
         print("Error: File not found.")
         return None
