@@ -14,7 +14,6 @@ class King(Baratheon, Lannister):
         `eyes` (str): The eye color of the King, defaults to 'brown'.
         `hairs` (str): The hair color of the King, defaults to 'dark'.
     """
-
     def __init__(self, first_name: str, is_alive: bool = True):
         """
         Initialize King with a first name and alive status.
