@@ -38,7 +38,7 @@ def outer(x, function):
     Returns:
     `object`: An object that when called returns the result of the `function`.
     """
-    count = [1]
+    count = 0
 
     def inner():
         """
@@ -48,9 +48,10 @@ def outer(x, function):
         Returns:
         `float`: The result of the function application.
         """
+        nonlocal count
         result = x
-        for _ in range(count[0]):
+        for _ in range(count + 1):
             result = function(result)
-        count[0] += 1
+        count += 1
         return result
     return inner
